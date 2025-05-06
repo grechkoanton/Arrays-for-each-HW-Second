@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
@@ -26,18 +27,19 @@ public class Main {
 
         System.out.println("Task 3");
         sum = 0;
-        int dayOfMonth = 31;
+        int lengthOfArray = 5;
         for (int i = 0; i < costAmountWeek.length; i++) {
             sum += costAmountWeek[i];
         }
         double sumFraction = sum;
-        sumFraction = (double) sum / dayOfMonth;
+        sumFraction = (double) sum / lengthOfArray;
         System.out.printf("Средняя сумма трат за месяц составила %.3f рублей%n", sumFraction);
 
         System.out.println("Task 4");
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int i = reverseFullName.length - 1; i >= 0; i--) {
-            System.out.print(reverseFullName[i]);
-        }
+        StringBuilder builder = new StringBuilder(Arrays.toString(reverseFullName));
+        builder.reverse();
+            System.out.println(builder.toString());
+
     }
 }
