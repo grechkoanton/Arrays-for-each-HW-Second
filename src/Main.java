@@ -6,20 +6,20 @@ public class Main {
         System.out.println("Task 1");
         int[] costAmountWeek = {3_000, 5_000, 2_000, 4_000, 1_000};
         int sum = 0;
-        for (int j : costAmountWeek) {
-            sum += j;
+        for (int index : costAmountWeek) {
+            sum += index;
         }
         System.out.println("Сумма трат за месяц составила " + sum + " рублей");
 
         System.out.println("Task 2");
-        int maxSum = 0;
-        int minSum = 6000;
-        for (int i : costAmountWeek) {
-            if (i > maxSum) {
-                maxSum = i;
+        int maxSum = Integer.MIN_VALUE;
+        int minSum = Integer.MAX_VALUE;
+        for (int element : costAmountWeek) {
+            if (element > maxSum) {
+                maxSum = element;
             }
-            if (i < minSum) {
-                minSum = i;
+            if (element < minSum) {
+                minSum = element;
             }
         }
         System.out.println("Максимальная сумма трат за неделю составила " + maxSum + " рублей");
@@ -27,19 +27,18 @@ public class Main {
 
         System.out.println("Task 3");
         sum = 0;
-        int lengthOfArray = 5;
-        for (int i = 0; i < costAmountWeek.length; i++) {
-            sum += costAmountWeek[i];
+        for (int cos = 0; cos < costAmountWeek.length; cos++) {
+            sum += costAmountWeek[cos];
         }
-        double sumFraction = sum;
-        sumFraction = (double) sum / lengthOfArray;
+        double sumFraction = (double) sum / costAmountWeek.length;
         System.out.printf("Средняя сумма трат за месяц составила %.3f рублей%n", sumFraction);
 
         System.out.println("Task 4");
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        StringBuilder builder = new StringBuilder(Arrays.toString(reverseFullName));
-        builder.reverse();
-            System.out.println(builder.toString());
+        for (int number = reverseFullName.length-1; number >= 0; number--) {
+            System.out.print(reverseFullName[number]);
+        }
+
 
     }
 }
