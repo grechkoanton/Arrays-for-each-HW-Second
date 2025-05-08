@@ -12,7 +12,7 @@ public class Main {
         System.out.println("Сумма трат за месяц составила " + sum + " рублей");
 
         System.out.println("Task 2");
-        int maxSum = Integer.MIN_VALUE;
+        int maxSum = 0;
         int minSum = Integer.MAX_VALUE;
         for (int element : costAmountWeek) {
             if (element > maxSum) {
@@ -33,12 +33,33 @@ public class Main {
         double sumFraction = (double) sum / costAmountWeek.length;
         System.out.printf("Средняя сумма трат за месяц составила %.3f рублей%n", sumFraction);
 
-        System.out.println("Task 4");
+        System.out.println("Task 4-1");
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
         for (int number = reverseFullName.length-1; number >= 0; number--) {
             System.out.print(reverseFullName[number]);
         }
-
-
+        System.out.println();
+        System.out.println("Task 4-2");
+        char[] reverseFullName2 = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = 0; i != reverseFullName2.length - (1 + i); i++) {
+            char symbolBehindI = reverseFullName2[i];
+            reverseFullName2[i] = reverseFullName2[reverseFullName2.length - (1 + i)];
+            reverseFullName2[reverseFullName2.length - (1 + i)] = symbolBehindI;
+        }
+        System.out.println(Arrays.toString(reverseFullName2));
+        System.out.println("Task 4-3");
+        char[] reverseFullName3 = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        char temp = 0; //дополнительная перменная для временного хранения значения
+        int leftOrder = 0;
+        int rightOrder = reverseFullName3.length - 1;
+        while (leftOrder < rightOrder) {
+            temp = reverseFullName3[leftOrder];
+            reverseFullName3[leftOrder] = reverseFullName3[rightOrder];
+            reverseFullName3[rightOrder] = temp;
+            leftOrder++;
+            rightOrder--;
+        }
+        System.out.println(reverseFullName3);
     }
+
 }
